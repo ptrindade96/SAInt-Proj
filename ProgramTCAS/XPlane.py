@@ -2,6 +2,7 @@ import socket
 import struct
 from threading import Thread
 from threading import Lock as Mutex
+from Definitions import Global
 
 
 class XPlaneConnection:
@@ -42,7 +43,7 @@ class XPlaneConnection:
 
     def __rcv_thread__(self):
         self.sock.settimeout(XPlaneConnection.TIMEOUT)
-        while self.OK:
+        while self.OK and Global.FINISH:
             try:
                 data = self.sock.recv(1024)
                 self.mutex_values.acquire()
@@ -52,6 +53,7 @@ class XPlaneConnection:
                 self.OK = False
                 self.sock.close()
                 return
+        self.OK = False
 
     def __decode_data__(self, data):
         i = 0

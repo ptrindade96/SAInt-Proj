@@ -14,7 +14,7 @@ run and operate a simulator, and data would be exchanged amongst all groups.
 This would then be used to simulate several TCAS systems, one for each simulator
 running.
 
-![Alt text](./Pictures/TCAS_Display)
+![Alt text](./Pictures/TCAS_Display.png)
 
 This repository is composed of:
 * ProgramTCAS - a folder containing the complete code developed for the TCAS,

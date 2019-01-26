@@ -76,7 +76,6 @@ if __name__ == '__main__':
 
 	while Simul.is_on():
 		my_values = Simul.get_values()
-		print("My values: " + repr(my_values))
 		others_values = []
 		if TCAS_ON:
 			Global.MUTEX_CONN.acquire()

@@ -43,7 +43,7 @@ class XPlaneConnection:
 
     def __rcv_thread__(self):
         self.sock.settimeout(XPlaneConnection.TIMEOUT)
-        while self.OK and Global.FINISH:
+        while self.OK and not Global.FINISH:
             try:
                 data = self.sock.recv(1024)
                 self.mutex_values.acquire()

@@ -68,8 +68,8 @@ class TcasConnection:
             self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         else:
             self.sock = sock_
-        Connection.count += 1
-        self.id = Connection.count
+        TcasConnection.count += 1
+        self.id = TcasConnection.count
         self.values = self.__init_values__()
         self.valid = True
         return
